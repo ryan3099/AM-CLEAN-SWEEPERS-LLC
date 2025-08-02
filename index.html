@@ -1,67 +1,175 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CAP Garland, LLC</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AM CLEAN SWEEPERS LLC</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f0f0f0;
-      color: #333;
-    }
+    * {margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', sans-serif;}
+    body {background:#fff; color:#333; line-height:1.6; transition: background 0.3s, color 0.3s;}
+    body.dark {background:#121212; color:#ddd;}
+
     header {
-      background-color: #003366;
-      color: white;
-      padding: 30px 20px;
+      height: 90vh;
+      position: relative;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: url('https://cdn.ccdiscussion.com/original/2X/4/44396b0527fd11e05e2d016f0cbec285dbf87ae7.jpeg') center/cover no-repeat;
+      overflow: hidden;
     }
-    section {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
+    header::before {
+      content:"";
+      position: absolute;
+      top:0; left:0; right:0; bottom:0;
+      background:rgba(0,128,0,0.4);
     }
-    h1, h2 {
-      color: #003366;
+    header h1, header p, header a {
+      z-index: 1;
+      position: relative;
+      color: #fff;
     }
-    .contact {
+    header h1 {font-size:2.5rem; margin-bottom: .5rem;}
+    header p {font-size: 1.2rem;}
+    .cta-btn {
+      margin-top: 1rem;
       background: #fff;
-      padding: 20px;
-      border-left: 5px solid #003366;
-      margin-top: 30px;
+      color: green;
+      padding: .8rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      transition: background 0.3s;
     }
+    .cta-btn:hover {background: #e6ffe6;}
+
+    #modeToggle {
+      position: fixed;
+      top:1rem;
+      right:1rem;
+      background:#fff;
+      border:none;
+      padding:.5rem 1rem;
+      border-radius: 50px;
+      cursor:pointer;
+      font-weight: bold;
+      z-index:1000;
+    }
+    body.dark #modeToggle {background:#333; color:#fff;}
+
+    section {
+      padding:3rem 1rem;
+      text-align:center;
+    }
+    section h2 {font-size:2rem; color: green; margin-bottom:2rem;}
+
+    /* Slider صغير */
+    .slider {
+      position: relative;
+      max-width: 500px;
+      margin:0 auto;
+      overflow: hidden;
+      border-radius: 10px;
+      border:2px solid green;
+    }
+    .slides {
+      display: flex;
+      width: 400%;
+      animation: slide 12s infinite;
+    }
+    .slides img {
+      width: 100%;
+      flex-shrink: 0;
+      height: 250px;
+      object-fit: cover;
+    }
+    @keyframes slide {
+      0% {transform: translateX(0);}
+      25% {transform: translateX(-100%);}
+      50% {transform: translateX(-200%);}
+      75% {transform: translateX(-300%);}
+      100% {transform: translateX(0);}
+    }
+
+    .features {
+      display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap:1.5rem;
+      margin-top:2rem;
+    }
+    .features div {
+      background:#f9f9f9;
+      padding:1.5rem;
+      border-radius:10px;
+      transition: transform .3s;
+    }
+    body.dark .features div {background:#1f1f1f;}
+    .features div:hover {transform:translateY(-5px);}
+
     footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 50px;
+      text-align:center;
+      padding:1rem;
+      background:#f1f1f1;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>CAP Garland, LLC</h1>
-    <p>Private Investment Fund</p>
+  <button id="modeToggle">Dark/Light</button>
+  
+  <header id="hero">
+    <h1>AM CLEAN SWEEPERS LLC</h1>
+    <p>Your trusted cleaning & sweeping solutions partner.</p>
+    <a href="#slider" class="cta-btn">Explore</a>
   </header>
 
-  <section>
-    <h2>About Us</h2>
-    <p>CAP Garland, LLC is a Washington-based private investment fund focused on delivering value through diversified investment strategies.</p>
-
-    <h2>Contact</h2>
-    <div class="contact">
-      <p><strong>Address:</strong> 915 W 2nd Ave, Spokane, WA 99201</p>
-      <p><strong>Email:</strong> <a href="mailto:ryanberg@capgarland.shop">ryanberg@capgarland.shop</a></p>
-      <p><strong>Phone:</strong> (509) 822-3850</p>
+  <section id="slider">
+    <h2>Our Gallery</h2>
+    <div class="slider">
+      <div class="slides">
+        <img src="https://cdn.ccdiscussion.com/original/2X/4/44396b0527fd11e05e2d016f0cbec285dbf87ae7.jpeg" alt="slide1">
+        <img src="https://avatars.mds.yandex.net/i?id=0670a3e9c393ab917089c22c4b05719c0fb601b3-5234951-images-thumbs&n=13" alt="slide2">
+        <img src="https://i.pinimg.com/originals/d7/33/68/d73368b50d350fc8dc0816561f31dbbf.jpg" alt="slide3">
+        <img src="https://avatars.mds.yandex.net/get-altay/788991/2a000001854af132aaaad3d3bf0598f63a36/XXL_height" alt="slide4">
+      </div>
     </div>
   </section>
 
+  <section>
+    <h2>Why Choose Us</h2>
+    <div class="features">
+      <div><h3>Eco-Friendly</h3><p>Green cleaning solutions for a healthier environment.</p></div>
+      <div><h3>Professional Team</h3><p>Experienced staff with reliable service.</p></div>
+      <div><h3>Affordable Pricing</h3><p>We offer top-notch service at competitive rates.</p></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Phone:</strong> 325-853-6165</p>
+    <p><strong>Email:</strong> <a href="mailto:admin@amclean.shop">admin@amclean.shop</a></p>
+    <p><strong>Address:</strong> Point Dr, Bakersfield, CA 93305</p>
+  </section>
+
   <footer>
-    &copy; 2025 CAP Garland, LLC. All rights reserved.
+    &copy; 2025 AM CLEAN SWEEPERS LLC. All Rights Reserved.
   </footer>
+
+  <script>
+    // Dark/Light Mode Toggle
+    const toggleBtn = document.getElementById('modeToggle');
+    toggleBtn.addEventListener('click',()=>{
+      document.body.classList.toggle('dark');
+    });
+
+    // Parallax effect بسيط
+    const hero = document.getElementById('hero');
+    document.addEventListener('mousemove', (e)=>{
+      let x = (e.clientX / window.innerWidth - 0.5) * 20;
+      let y = (e.clientY / window.innerHeight - 0.5) * 20;
+      hero.style.backgroundPosition = `${50+x}% ${50+y}%`;
+    });
+  </script>
 </body>
 </html>
